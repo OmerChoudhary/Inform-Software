@@ -84,6 +84,7 @@ public class InfinispanUserSessionProviderFactory implements UserSessionProvider
     private boolean preloadOfflineSessionsFromDatabase;
 
     private Config.Scope config;
+    private boolean allowCacheStore;
 
     private RemoteCacheInvoker remoteCacheInvoker;
     private CrossDCLastSessionRefreshStore lastSessionRefreshStore;
@@ -100,13 +101,14 @@ public class InfinispanUserSessionProviderFactory implements UserSessionProvider
         Cache<UUID, SessionEntityWrapper<AuthenticatedClientSessionEntity>> offlineClientSessionsCache = connections.getCache(InfinispanConnectionProvider.OFFLINE_CLIENT_SESSION_CACHE_NAME);
 
         return new InfinispanUserSessionProvider(session, remoteCacheInvoker, lastSessionRefreshStore, offlineLastSessionRefreshStore,
-                persisterLastSessionRefreshStore, keyGenerator, cache, offlineSessionsCache, clientSessionCache, offlineClientSessionsCache, !preloadOfflineSessionsFromDatabase);
+                persisterLastSessionRefreshStore, keyGenerator, cache, offlineSessionsCache, clientSessionCache, offlineClientSessionsCache, !preloadOfflineSessionsFromDatabase, allowCacheStore);
     }
 
     @Override
     public void init(Config.Scope config) {
         this.config = config;
         preloadOfflineSessionsFromDatabase = config.getBoolean("preloadOfflineSessionsFromDatabase", false);
+        allowCacheStore = config.getBoolean ("allowCacheStore", false);
     }
 
     @Override

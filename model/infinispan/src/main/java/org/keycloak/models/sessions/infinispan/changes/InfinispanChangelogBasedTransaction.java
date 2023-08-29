@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.infinispan.AdvancedCache;
 import org.infinispan.Cache;
 import org.infinispan.context.Flag;
 import org.jboss.logging.Logger;
@@ -51,15 +52,17 @@ public class InfinispanChangelogBasedTransaction<K, V extends SessionEntity> ext
 
     private final SessionFunction<V> lifespanMsLoader;
     private final SessionFunction<V> maxIdleTimeMsLoader;
+    private final boolean allowCacheStore;
 
     public InfinispanChangelogBasedTransaction(KeycloakSession kcSession, Cache<K, SessionEntityWrapper<V>> cache, RemoteCacheInvoker remoteCacheInvoker,
-                                               SessionFunction<V> lifespanMsLoader, SessionFunction<V> maxIdleTimeMsLoader) {
+                                               SessionFunction<V> lifespanMsLoader, SessionFunction<V> maxIdleTimeMsLoader, boolean allowCacheStore) {
         this.kcSession = kcSession;
         this.cacheName = cache.getName();
         this.cache = cache;
         this.remoteCacheInvoker = remoteCacheInvoker;
         this.lifespanMsLoader = lifespanMsLoader;
         this.maxIdleTimeMsLoader = maxIdleTimeMsLoader;
+        this.allowCacheStore = allowCacheStore;
     }
 
 
@@ -189,19 +192,17 @@ public class InfinispanChangelogBasedTransaction<K, V extends SessionEntity> ext
         switch (operation) {
             case REMOVE:
                 // Just remove it
-                CacheDecorators.skipCacheStore(cache)
-                        .getAdvancedCache().withFlags(Flag.IGNORE_RETURN_VALUES)
+                getDecoratedAdvancedCache().withFlags(Flag.IGNORE_RETURN_VALUES)
                         .remove(key);
                 break;
             case ADD:
-                CacheDecorators.skipCacheStore(cache)
-                        .getAdvancedCache().withFlags(Flag.IGNORE_RETURN_VALUES)
+                getDecoratedAdvancedCache().withFlags(Flag.IGNORE_RETURN_VALUES)
                         .put(key, sessionWrapper, task.getLifespanMs(), TimeUnit.MILLISECONDS, task.getMaxIdleTimeMs(), TimeUnit.MILLISECONDS);
 
                 logger.tracef("Added entity '%s' to the cache '%s' . Lifespan: %d ms, MaxIdle: %d ms", key, cache.getName(), task.getLifespanMs(), task.getMaxIdleTimeMs());
                 break;
             case ADD_IF_ABSENT:
-                SessionEntityWrapper<V> existing = CacheDecorators.skipCacheStore(cache).putIfAbsent(key, sessionWrapper, task.getLifespanMs(), TimeUnit.MILLISECONDS, task.getMaxIdleTimeMs(), TimeUnit.MILLISECONDS);
+                SessionEntityWrapper<V> existing = getDecoratedAdvancedCache().putIfAbsent(key, sessionWrapper, task.getLifespanMs(), TimeUnit.MILLISECONDS, task.getMaxIdleTimeMs(), TimeUnit.MILLISECONDS);
                 if (existing != null) {
                     logger.debugf("Existing entity in cache for key: %s . Will update it", key);
 
@@ -234,7 +235,7 @@ public class InfinispanChangelogBasedTransaction<K, V extends SessionEntity> ext
             SessionEntityWrapper<V> newVersionEntity = generateNewVersionAndWrapEntity(session, oldVersionEntity.getLocalMetadata());
 
             // Atomic cluster-aware replace
-            replaced = CacheDecorators.skipCacheStore(cache).replace(key, oldVersionEntity, newVersionEntity, lifespanMs, TimeUnit.MILLISECONDS, maxIdleTimeMs, TimeUnit.MILLISECONDS);
+            replaced = getDecoratedAdvancedCache().replace(key, oldVersionEntity, newVersionEntity, lifespanMs, TimeUnit.MILLISECONDS, maxIdleTimeMs, TimeUnit.MILLISECONDS);
 
             // Replace fail. Need to load latest entity from cache, apply updates again and try to replace in cache again
             if (!replaced) {
@@ -265,6 +266,12 @@ public class InfinispanChangelogBasedTransaction<K, V extends SessionEntity> ext
 
     }
 
+    protected AdvancedCache<K, SessionEntityWrapper<V>> getDecoratedAdvancedCache () {
+        if (allowCacheStore) {
+            return cache.getAdvancedCache ();
+        }
+        return CacheDecorators.skipCacheStore (cache);
+    }
 
     @Override
     protected void rollbackImpl() {
