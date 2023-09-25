@@ -17,11 +17,14 @@
 
 package org.keycloak.models.map.datastore;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import org.jboss.logging.Logger;
 import org.keycloak.Config;
 import org.keycloak.common.enums.SslRequired;
 import org.keycloak.common.util.MultivaluedHashMap;
 import org.keycloak.component.ComponentModel;
+import org.keycloak.deployment.DeployedConfigurationsManager;
 import org.keycloak.models.AdminRoles;
 import org.keycloak.models.ClientProvider;
 import org.keycloak.models.ClientScopeProvider;
@@ -106,6 +109,7 @@ import org.keycloak.util.JsonSerialization;
 import org.keycloak.utils.ReservedCharValidator;
 import org.keycloak.validation.ValidationUtil;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -305,7 +309,7 @@ public class MapExportImportManager implements ExportImportManager {
 
         updateParSettings(rep, newRealm);
 
-        Map<String, String> mappedFlows = importAuthenticationFlows(newRealm, rep);
+        Map<String, String> mappedFlows = importAuthenticationFlows(session, newRealm, rep);
         if (rep.getRequiredActions() != null) {
             for (RequiredActionProviderRepresentation action : rep.getRequiredActions()) {
                 RequiredActionProviderModel model = toModel(action);
@@ -481,6 +485,7 @@ public class MapExportImportManager implements ExportImportManager {
         return role;
     }
 
+    @Override
     public void exportRealm(RealmModel realm, ExportOptions options, ExportAdapter callback) {
         throw new ModelException("exporting for map storage is currently not supported");
     }
@@ -491,11 +496,28 @@ public class MapExportImportManager implements ExportImportManager {
           might want to add the file name or the media type as a method parameter to switch between different implementations. */
 
         RealmRepresentation rep;
+        byte[] inputData = null;
         try {
-            rep = JsonSerialization.readValue(requestBody, RealmRepresentation.class);
+            // read input data to be able to re-try later
+            try (requestBody) {
+                inputData = requestBody.readAllBytes();
+            }
+            rep = JsonSerialization.readValue(new ByteArrayInputStream(inputData), RealmRepresentation.class);
         } catch (IOException e) {
-            throw new ModelException("unable to read contents from stream", e);
+            /* This is a re-try when unrecognized property is being imported, it may happen e.g. when using admin client of newer version 
+               in heterogenous cluster (during zero-downtime upgrade) and the request lands into older version of kc. */
+            if (e instanceof UnrecognizedPropertyException && inputData != null) {
+                try {
+                    rep = JsonSerialization.mapper.copy().disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES).readValue(new ByteArrayInputStream(inputData), RealmRepresentation.class);
+                    logger.warnf("%s during an import!", e.getMessage().indexOf(",") > 0 ? e.getMessage().substring(0, e.getMessage().indexOf(",")) : "Unrecognized field");
+                } catch (IOException ex) {
+                    throw new ModelException("unable to read contents from stream", ex);
+                }
+            } else {
+                throw new ModelException("unable to read contents from stream", e);
+            }
         }
+
         logger.debugv("importRealm: {0}", rep.getRealm());
 
         if (!useNewImportMethod) {
@@ -1434,7 +1456,7 @@ public class MapExportImportManager implements ExportImportManager {
 
         return webAuthnPolicy;
     }
-    public static Map<String, String> importAuthenticationFlows(RealmModel newRealm, RealmRepresentation rep) {
+    public static Map<String, String> importAuthenticationFlows(KeycloakSession session, RealmModel newRealm, RealmRepresentation rep) {
         Map<String, String> mappedFlows = new HashMap<>();
         if (rep.getAuthenticationFlows() == null) {
             // assume this is an old version being imported
@@ -1462,7 +1484,7 @@ public class MapExportImportManager implements ExportImportManager {
                 for (AuthenticationFlowRepresentation flowRep : rep.getAuthenticationFlows()) {
                     AuthenticationFlowModel model = newRealm.getFlowByAlias(flowRep.getAlias());
                     for (AuthenticationExecutionExportRepresentation exeRep : flowRep.getAuthenticationExecutions()) {
-                        AuthenticationExecutionModel execution = toModel(newRealm, model, exeRep);
+                        AuthenticationExecutionModel execution = toModel(session, newRealm, model, exeRep);
                         newRealm.addAuthenticatorExecution(execution);
                     }
                 }
@@ -1548,10 +1570,10 @@ public class MapExportImportManager implements ExportImportManager {
         return mappedFlows;
     }
 
-    private static AuthenticationExecutionModel toModel(RealmModel realm, AuthenticationFlowModel parentFlow, AuthenticationExecutionExportRepresentation rep) {
+    private static AuthenticationExecutionModel toModel(KeycloakSession session, RealmModel realm, AuthenticationFlowModel parentFlow, AuthenticationExecutionExportRepresentation rep) {
         AuthenticationExecutionModel model = new AuthenticationExecutionModel();
         if (rep.getAuthenticatorConfig() != null) {
-            AuthenticatorConfigModel config = realm.getAuthenticatorConfigByAlias(rep.getAuthenticatorConfig());
+            AuthenticatorConfigModel config = new DeployedConfigurationsManager(session).getAuthenticatorConfigByAlias(realm, rep.getAuthenticatorConfig());
             model.setAuthenticatorConfig(config.getId());
         }
         model.setAuthenticator(rep.getAuthenticator());

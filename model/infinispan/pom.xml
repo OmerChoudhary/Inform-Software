@@ -21,7 +21,7 @@
     <parent>
         <artifactId>keycloak-model-pom</artifactId>
         <groupId>org.keycloak</groupId>
-        <version>22.0.1-INFORM-1</version>
+        <version>22.0.3-INFORM-1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -81,7 +81,7 @@
         <!-- Needed for externalizers in package "org.keycloak.models.sessions.infinispan.entities.wildfly" .
              Hopefully can be removed once we start to use the protobuf marshalling -->
         <dependency>
-            <groupId>org.wildfly</groupId>
+            <groupId>${ee.maven.groupId}</groupId>
             <artifactId>wildfly-clustering-infinispan-marshalling</artifactId>
         </dependency>
 

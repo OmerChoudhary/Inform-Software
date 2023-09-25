@@ -40,6 +40,11 @@ import {
 } from "./UserProfileFields";
 import { UserRoleMapping } from "./UserRoleMapping";
 import { UserSessions } from "./UserSessions";
+import {
+  UserFormFields,
+  toUserFormFields,
+  toUserRepresentation,
+} from "./form-state";
 import { UserParams, UserTab, toUser } from "./routes/User";
 import { toUsers } from "./routes/Users";
 
@@ -57,7 +62,7 @@ export default function EditUser() {
   useFetch(
     async () => {
       const [user, currentRealm, attackDetection] = await Promise.all([
-        adminClient.users.findOne({ id: id! }),
+        adminClient.users.findOne({ id: id!, userProfileMetadata: true }),
         adminClient.realms.findOne({ realm }),
         adminClient.attackDetection.findOne({ id: id! }),
       ]);
@@ -75,7 +80,7 @@ export default function EditUser() {
       setUser(user);
       setBruteForced(bruteForced);
     },
-    [refreshCount]
+    [refreshCount],
   );
 
   if (!user || !bruteForced) {
@@ -99,9 +104,9 @@ const EditUserForm = ({ user, bruteForced, refresh }: EditUserFormProps) => {
   const { addAlert, addError } = useAlerts();
   const navigate = useNavigate();
   const { hasAccess } = useAccess();
-  const userForm = useForm<UserRepresentation>({
+  const userForm = useForm<UserFormFields>({
     mode: "onChange",
-    defaultValues: user,
+    defaultValues: toUserFormFields(user),
   });
 
   const [realmRepresentation, setRealmRepresentattion] =
@@ -115,7 +120,7 @@ const EditUserForm = ({ user, bruteForced, refresh }: EditUserFormProps) => {
       }
       setRealmRepresentattion(realm);
     },
-    []
+    [],
   );
 
   const isFeatureEnabled = useIsFeatureEnabled();
@@ -142,17 +147,13 @@ const EditUserForm = ({ user, bruteForced, refresh }: EditUserFormProps) => {
   const sessionsTab = useTab("sessions");
 
   // Ensure the form remains up-to-date when the user is updated.
-  useUpdateEffect(() => userForm.reset(user), [user]);
+  useUpdateEffect(() => userForm.reset(toUserFormFields(user)), [user]);
 
-  const save = async (formUser: UserRepresentation) => {
+  const save = async (data: UserFormFields) => {
     try {
       await adminClient.users.update(
         { id: user.id! },
-        {
-          ...formUser,
-          username: formUser.username?.trim(),
-          attributes: { ...user.attributes, ...formUser.attributes },
-        }
+        toUserRepresentation(data),
       );
       addAlert(t("userSaved"), AlertVariant.success);
       refresh();
@@ -189,7 +190,7 @@ const EditUserForm = ({ user, bruteForced, refresh }: EditUserFormProps) => {
       try {
         const data = await adminClient.users.impersonation(
           { id: user.id! },
-          { user: user.id!, realm }
+          { user: user.id!, realm },
         );
         if (data.sameRealm) {
           window.location = data.redirect;
@@ -226,7 +227,9 @@ const EditUserForm = ({ user, bruteForced, refresh }: EditUserFormProps) => {
             {t("common:delete")}
           </DropdownItem>,
         ]}
-        onToggle={(value) => save({ ...user, enabled: value })}
+        onToggle={(value) =>
+          save({ ...toUserFormFields(user), enabled: value })
+        }
         isEnabled={user.enabled}
       />
 
@@ -258,7 +261,7 @@ const EditUserForm = ({ user, bruteForced, refresh }: EditUserFormProps) => {
                   title={<TabTitleText>{t("common:attributes")}</TabTitleText>}
                   {...attributesTab}
                 >
-                  <UserAttributes user={user} />
+                  <UserAttributes user={user} save={save} />
                 </Tab>
               )}
               <Tab

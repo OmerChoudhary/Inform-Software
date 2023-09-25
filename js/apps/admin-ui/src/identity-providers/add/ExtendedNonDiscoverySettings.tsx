@@ -46,6 +46,7 @@ export const ExtendedNonDiscoverySettings = () => {
           label="backchannelLogout"
         />
         <SwitchField field="config.disableUserInfo" label="disableUserInfo" />
+        <SwitchField field="config.disableNonce" label="disableNonce" />
         <TextField field="config.defaultScope" label="scopes" />
         <FormGroupField label="prompt">
           <Controller
@@ -111,7 +112,7 @@ export const ExtendedNonDiscoverySettings = () => {
                   onMinus={() => field.onChange(v - 1)}
                   onChange={(event) => {
                     const value = Number(
-                      (event.target as HTMLInputElement).value
+                      (event.target as HTMLInputElement).value,
                     );
                     field.onChange(value < 0 ? 0 : value);
                   }}
