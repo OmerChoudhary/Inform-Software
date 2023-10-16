@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.keycloak</groupId>
         <artifactId>keycloak-testsuite-pom</artifactId>
-        <version>22.0.3-INFORM-2</version>
+        <version>22.0.4</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -378,14 +378,6 @@
             <properties>
                 <keycloak.profile.feature.map_storage>enabled</keycloak.profile.feature.map_storage>
                 <keycloak.model.parameters>Map,JpaMapStorage</keycloak.model.parameters>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>map-jpa-cockroachdb</id>
-            <properties>
-                <keycloak.profile.feature.map_storage>enabled</keycloak.profile.feature.map_storage>
-                <keycloak.model.parameters>Map,JpaMapStorageCockroachdb</keycloak.model.parameters>
             </properties>
         </profile>
 
