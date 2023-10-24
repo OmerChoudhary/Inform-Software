@@ -31,11 +31,11 @@
     </description>
     <groupId>org.keycloak</groupId>
     <artifactId>keycloak-parent</artifactId>
-    <version>22.0.4-INFORM-1</version>
+    <version>22.0.5</version>
     <packaging>pom</packaging>
 
     <properties>
-        <project.version.npm>22.0.4-INFORM-1</project.version.npm>
+        <project.version.npm>22.0.5</project.version.npm>
 
         <asciidoctor.plugin.version>1.5.8</asciidoctor.plugin.version>
 
@@ -45,8 +45,8 @@
         <jboss.snapshots.repo.id>jboss-snapshots-repository</jboss.snapshots.repo.id>
         <jboss.snapshots.repo.url>https://s01.oss.sonatype.org/content/repositories/snapshots/</jboss.snapshots.repo.url>
 
-        <quarkus.version>3.2.6.Final</quarkus.version>
-        <quarkus.build.version>3.2.6.Final</quarkus.build.version>
+        <quarkus.version>3.2.7.Final</quarkus.version>
+        <quarkus.build.version>3.2.7.Final</quarkus.build.version>
 
         <project.build-time>${timestamp}</project.build-time>
 
@@ -138,7 +138,7 @@
         <freemarker.version>2.3.32</freemarker.version>
 
         <jetty9.version>${jetty94.version}</jetty9.version>
-        <liquibase.version>4.20.0</liquibase.version>
+        <liquibase.version>4.23.2</liquibase.version>
         <osgi.version>4.2.0</osgi.version>
         <pax.web.version>7.1.0</pax.web.version>
         <servlet.api.30.version>1.0.2.Final</servlet.api.30.version>

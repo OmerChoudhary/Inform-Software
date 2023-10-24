@@ -7,7 +7,7 @@
     <parent>
         <artifactId>keycloak-parent</artifactId>
         <groupId>org.keycloak</groupId>
-        <version>22.0.4-INFORM-1</version>
+        <version>22.0.5</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -94,6 +94,10 @@
                 <exclusion>
                     <groupId>com.aayushatharva.brotli4j</groupId>
                     <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-compress</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
