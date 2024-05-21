@@ -84,8 +84,8 @@ importers:
         specifier: ^23.6.0
         version: 23.6.0
       i18next-http-backend:
-        specifier: ^2.2.2
-        version: 2.2.2
+        specifier: ^2.5.2
+        version: 2.5.2
       keycloak-js:
         specifier: workspace:*
         version: link:../../libs/keycloak-js
@@ -184,8 +184,8 @@ importers:
         specifier: ^23.6.0
         version: 23.6.0
       i18next-http-backend:
-        specifier: ^2.2.2
-        version: 2.2.2
+        specifier: ^2.5.2
+        version: 2.5.2
       keycloak-js:
         specifier: workspace:*
         version: link:../../libs/keycloak-js
@@ -2999,8 +2999,8 @@ packages:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: true
 
-  /cross-fetch@3.1.6:
-    resolution: {integrity: sha512-riRvo06crlE8HiqOwIpQhxwdOk4fOeR7FVM/wXoxchFEqMNUjvbs3bfo4OTgMEMHzppd4DxFBDbyySj8Cv781g==}
+  /cross-fetch@4.0.0:
+    resolution: {integrity: sha512-e4a5N8lVvuLgAWgnCrLr2PP0YyDOTHa9H/Rj54dirp61qXnNq46m82bRhNqIA5VccJtWBvPTFRV3TtvHUKPB1g==}
     dependencies:
       node-fetch: 2.7.0
     transitivePeerDependencies:
@@ -4487,10 +4487,10 @@ packages:
     hasBin: true
     dev: true
 
-  /i18next-http-backend@2.2.2:
-    resolution: {integrity: sha512-mJu4ZqzDtBiU3O4GV9AbK5ekEqoDMdMnCl3pkdXmb5b8yoIH//u8FsmIe6C5qXb3teZu+j6VMi20tjUgzeABiw==}
+  /i18next-http-backend@2.5.2:
+    resolution: {integrity: sha512-+K8HbDfrvc1/2X8jpb7RLhI9ZxBDpx3xogYkQwGKlWAUXLSEGXzgdt3EcUjLlBCdMwdQY+K+EUF6oh8oB6rwHw==}
     dependencies:
-      cross-fetch: 3.1.6
+      cross-fetch: 4.0.0
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -7693,7 +7693,7 @@ packages:
       file-selector: 0.6.0
       flat: 6.0.1
       i18next: 23.6.0
-      i18next-http-backend: 2.2.2
+      i18next-http-backend: 2.5.2
       keycloak-js: link:libs/keycloak-js
       lodash-es: 4.17.21
       monaco-editor: 0.44.0
