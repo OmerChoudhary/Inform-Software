@@ -73,13 +73,13 @@ importers:
         version: 4.224.2
       '@patternfly/react-core':
         specifier: ^4.276.8
-        version: 4.276.8(react-dom@18.2.0)(react@18.2.0)
+        version: 4.276.8(react-dom@18.3.1)(react@18.2.0)
       '@patternfly/react-icons':
         specifier: ^4.93.6
-        version: 4.93.6(react-dom@18.2.0)(react@18.2.0)
+        version: 4.93.6(react-dom@18.3.1)(react@18.2.0)
       '@patternfly/react-table':
         specifier: ^4.113.0
-        version: 4.113.0(react-dom@18.2.0)(react@18.2.0)
+        version: 4.113.0(react-dom@18.3.1)(react@18.2.0)
       i18next:
         specifier: ^23.6.0
         version: 23.6.0
@@ -99,17 +99,17 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0
       react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.2.0)
       react-hook-form:
         specifier: ^7.47.0
         version: 7.47.0(react@18.2.0)
       react-i18next:
         specifier: ^13.3.1
-        version: 13.3.1(i18next@23.6.0)(react-dom@18.2.0)(react@18.2.0)
+        version: 13.3.1(i18next@23.6.0)(react-dom@18.3.1)(react@18.2.0)
       react-router-dom:
         specifier: ^6.15.0
-        version: 6.15.0(react-dom@18.2.0)(react@18.2.0)
+        version: 6.15.0(react-dom@18.3.1)(react@18.2.0)
       ui-shared:
         specifier: workspace:*
         version: link:../../libs/ui-shared
@@ -127,8 +127,8 @@ importers:
         specifier: ^18.2.31
         version: 18.2.31
       '@types/react-dom':
-        specifier: ^18.2.14
-        version: 18.2.14
+        specifier: ^18.3.0
+        version: 18.3.0
       '@vitejs/plugin-react-swc':
         specifier: ^3.4.0
         version: 3.4.0(vite@4.5.0)
@@ -152,19 +152,19 @@ importers:
         version: 4.224.2
       '@patternfly/react-code-editor':
         specifier: ^4.82.115
-        version: 4.82.115(react-dom@18.2.0)(react-monaco-editor@0.51.0)(react@18.2.0)
+        version: 4.82.115(react-dom@18.3.1)(react-monaco-editor@0.51.0)(react@18.2.0)
       '@patternfly/react-core':
         specifier: ^4.276.8
-        version: 4.276.8(react-dom@18.2.0)(react@18.2.0)
+        version: 4.276.8(react-dom@18.3.1)(react@18.2.0)
       '@patternfly/react-icons':
         specifier: ^4.93.6
-        version: 4.93.6(react-dom@18.2.0)(react@18.2.0)
+        version: 4.93.6(react-dom@18.3.1)(react@18.2.0)
       '@patternfly/react-styles':
         specifier: ^4.92.6
         version: 4.92.6
       '@patternfly/react-table':
         specifier: ^4.113.0
-        version: 4.113.0(react-dom@18.2.0)(react@18.2.0)
+        version: 4.113.0(react-dom@18.3.1)(react@18.2.0)
       admin-ui:
         specifier: 'file:'
         version: file:apps/admin-ui(@types/react@18.2.31)(react-monaco-editor@0.51.0)
@@ -199,8 +199,8 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0
       react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.2.0)
       react-dropzone:
         specifier: ^14.2.3
         version: 14.2.3(react@18.2.0)
@@ -212,13 +212,13 @@ importers:
         version: 7.47.0(react@18.2.0)
       react-i18next:
         specifier: ^13.3.1
-        version: 13.3.1(i18next@23.6.0)(react-dom@18.2.0)(react@18.2.0)
+        version: 13.3.1(i18next@23.6.0)(react-dom@18.3.1)(react@18.2.0)
       react-router-dom:
         specifier: ^6.15.0
-        version: 6.15.0(react-dom@18.2.0)(react@18.2.0)
+        version: 6.15.0(react-dom@18.3.1)(react@18.2.0)
       reactflow:
         specifier: ^11.9.4
-        version: 11.9.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+        version: 11.9.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
       ui-shared:
         specifier: workspace:*
         version: link:../../libs/ui-shared
@@ -237,7 +237,7 @@ importers:
         version: 6.1.4(vitest@0.34.6)
       '@testing-library/react':
         specifier: ^14.0.0
-        version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
+        version: 14.0.0(react-dom@18.3.1)(react@18.2.0)
       '@types/dagre':
         specifier: ^0.7.51
         version: 0.7.51
@@ -251,8 +251,8 @@ importers:
         specifier: ^18.2.31
         version: 18.2.31
       '@types/react-dom':
-        specifier: ^18.2.14
-        version: 18.2.14
+        specifier: ^18.3.0
+        version: 18.3.0
       '@types/uuid':
         specifier: ^9.0.6
         version: 9.0.6
@@ -389,7 +389,7 @@ importers:
     dependencies:
       '@patternfly/react-core':
         specifier: ^4.276.8
-        version: 4.276.8(react-dom@18.2.0)(react@18.2.0)
+        version: 4.276.8(react-dom@18.3.1)(react@18.2.0)
       '@patternfly/react-styles':
         specifier: ^4.11.8
         version: 4.92.6
@@ -400,15 +400,15 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0
       react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.2.0)
     devDependencies:
       '@types/react':
         specifier: ^18.2.31
         version: 18.2.31
       '@types/react-dom':
-        specifier: ^18.2.14
-        version: 18.2.14
+        specifier: ^18.3.0
+        version: 18.3.0
       '@vitejs/plugin-react-swc':
         specifier: ^3.4.0
         version: 3.4.0(vite@4.5.0)
@@ -429,16 +429,16 @@ importers:
     dependencies:
       '@patternfly/react-core':
         specifier: ^4.276.8
-        version: 4.276.8(react-dom@18.2.0)(react@18.2.0)
+        version: 4.276.8(react-dom@18.3.1)(react@18.2.0)
       '@patternfly/react-icons':
         specifier: ^4.93.6
-        version: 4.93.6(react-dom@18.2.0)(react@18.2.0)
+        version: 4.93.6(react-dom@18.3.1)(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
       react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.2.0)
       react-hook-form:
         specifier: 7.47.0
         version: 7.47.0(react@18.2.0)
@@ -447,8 +447,8 @@ importers:
         specifier: ^18.2.31
         version: 18.2.31
       '@types/react-dom':
-        specifier: ^18.2.14
-        version: 18.2.14
+        specifier: ^18.3.0
+        version: 18.3.0
       '@vitejs/plugin-react-swc':
         specifier: ^3.4.0
         version: 3.4.0(vite@4.5.0)
@@ -1078,48 +1078,48 @@ packages:
     resolution: {integrity: sha512-HGNV26uyHSIECuhjPg/WGn0mXbAotcs6ODfhAOkfYjIgGylddgiwElxUe1rpEHV5mQJJ2rMn4OdeJIIpzRX61g==}
     dev: false
 
-  /@patternfly/react-code-editor@4.82.115(react-dom@18.2.0)(react-monaco-editor@0.51.0)(react@18.2.0):
+  /@patternfly/react-code-editor@4.82.115(react-dom@18.3.1)(react-monaco-editor@0.51.0)(react@18.2.0):
     resolution: {integrity: sha512-mwHj5r+HGEUppFKzw8vKPG140LAZAuyAKmCIjgmtCH2sUWkujtOS2BMId3BZI7mwdYt9vjwdbiUIHls0TP/HhQ==}
     peerDependencies:
       react: ^16.8 || ^17 || ^18
       react-dom: ^16.8 || ^17 || ^18
       react-monaco-editor: ^0.51.0
     dependencies:
-      '@patternfly/react-core': 4.276.8(react-dom@18.2.0)(react@18.2.0)
-      '@patternfly/react-icons': 4.93.6(react-dom@18.2.0)(react@18.2.0)
+      '@patternfly/react-core': 4.276.8(react-dom@18.3.1)(react@18.2.0)
+      '@patternfly/react-icons': 4.93.6(react-dom@18.3.1)(react@18.2.0)
       '@patternfly/react-styles': 4.92.6
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       react-dropzone: 9.0.0(react@18.2.0)
       react-monaco-editor: 0.51.0(@types/react@18.2.31)(monaco-editor@0.44.0)(react@18.2.0)
       tslib: 2.6.2
     dev: false
 
-  /@patternfly/react-core@4.276.8(react-dom@18.2.0)(react@18.2.0):
+  /@patternfly/react-core@4.276.8(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-dn322rEzBeiVztZEuCZMUUittNb8l1hk30h9ZN31FLZLLVtXGlThFNV9ieqOJYA9zrYxYZrHMkTnOxSWVacMZg==}
     peerDependencies:
       react: ^16.8 || ^17 || ^18
       react-dom: ^16.8 || ^17 || ^18
     dependencies:
-      '@patternfly/react-icons': 4.93.6(react-dom@18.2.0)(react@18.2.0)
+      '@patternfly/react-icons': 4.93.6(react-dom@18.3.1)(react@18.2.0)
       '@patternfly/react-styles': 4.92.8
       '@patternfly/react-tokens': 4.94.7
       focus-trap: 6.9.2
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       react-dropzone: 9.0.0(react@18.2.0)
       tippy.js: 5.1.2
       tslib: 2.6.2
     dev: false
 
-  /@patternfly/react-icons@4.93.6(react-dom@18.2.0)(react@18.2.0):
+  /@patternfly/react-icons@4.93.6(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-ZrXegc/81oiuTIeWvoHb3nG/eZODbB4rYmekBEsrbiysyO7m/sUFoi/RLvgFINrRoh6YCJqL5fj06Jg6d7jX1g==}
     peerDependencies:
       react: ^16.8 || ^17 || ^18
       react-dom: ^16.8 || ^17 || ^18
     dependencies:
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
     dev: false
 
   /@patternfly/react-styles@4.92.6:
@@ -1130,19 +1130,19 @@ packages:
     resolution: {integrity: sha512-K4lUU8O4HiCX9NeuNUIrPgN3wlGERCxJVio+PAjd8hpJD/PKnjFfOJ9u6/Cii3qLy/5ZviWPRNHbGiwA/+YUhg==}
     dev: false
 
-  /@patternfly/react-table@4.113.0(react-dom@18.2.0)(react@18.2.0):
+  /@patternfly/react-table@4.113.0(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-qxa3NWCdYasqQQL1rqEd8DyNa8oWr6HNveNW5YJRakE7imWZhUPG2Nd6Op60+KYX8kbCSl7gwSmgAZAYMBMZkQ==}
     peerDependencies:
       react: ^16.8 || ^17 || ^18
       react-dom: ^16.8 || ^17 || ^18
     dependencies:
-      '@patternfly/react-core': 4.276.8(react-dom@18.2.0)(react@18.2.0)
-      '@patternfly/react-icons': 4.93.6(react-dom@18.2.0)(react@18.2.0)
+      '@patternfly/react-core': 4.276.8(react-dom@18.3.1)(react@18.2.0)
+      '@patternfly/react-icons': 4.93.6(react-dom@18.3.1)(react@18.2.0)
       '@patternfly/react-styles': 4.92.8
       '@patternfly/react-tokens': 4.94.7
       lodash: 4.17.21
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       tslib: 2.6.2
     dev: false
 
@@ -1170,39 +1170,39 @@ packages:
       playwright: 1.39.0
     dev: true
 
-  /@reactflow/background@11.3.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0):
+  /@reactflow/background@11.3.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-bgwvqWxF09chwmdkyClpYEMaewBspdwjgLbbFlLf4SpWPFMYyuvCBQrcISsvy/EDEWO9i3Uj9ktgGAhvtSQsmA==}
     peerDependencies:
       react: '>=17'
       react-dom: '>=17'
     dependencies:
-      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
       classcat: 5.0.4
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       zustand: 4.4.1(@types/react@18.2.31)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
       - immer
     dev: false
 
-  /@reactflow/controls@11.2.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0):
+  /@reactflow/controls@11.2.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-x6e5p9iHjC6gd+4SoZ3DOOp0F1MefGKQ8hT6yPVdqxfo1+rV2WhrWvrX/MCoEu12Dp7457LdLfa0giy3aho8tQ==}
     peerDependencies:
       react: '>=17'
       react-dom: '>=17'
     dependencies:
-      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
       classcat: 5.0.4
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       zustand: 4.4.1(@types/react@18.2.31)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
       - immer
     dev: false
 
-  /@reactflow/core@11.9.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0):
+  /@reactflow/core@11.9.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-Ko7nKPOYalwDTTbRHi2+QXDiidSAcpUzGN3G+0B+QysLZkcaPCkpkMjjHiDC4c/Z1BJBzs1FRJg/T6BXaBnYkg==}
     peerDependencies:
       react: '>=17'
@@ -1217,61 +1217,61 @@ packages:
       d3-selection: 3.0.0
       d3-zoom: 3.0.0
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       zustand: 4.4.1(@types/react@18.2.31)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
       - immer
     dev: false
 
-  /@reactflow/minimap@11.7.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0):
+  /@reactflow/minimap@11.7.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-Jo1R+uDey9IV7O2s3m0gK2+cZpg9M8hq2EZJb3NGfOSzMAPhj3mby0fNJIgTzycreuht0TpA51c2YfjGI3YIOw==}
     peerDependencies:
       react: '>=17'
       react-dom: '>=17'
     dependencies:
-      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
       '@types/d3-selection': 3.0.6
       '@types/d3-zoom': 3.0.4
       classcat: 5.0.4
       d3-selection: 3.0.0
       d3-zoom: 3.0.0
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       zustand: 4.4.1(@types/react@18.2.31)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
       - immer
     dev: false
 
-  /@reactflow/node-resizer@2.2.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0):
+  /@reactflow/node-resizer@2.2.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-+p271/hAsM5M1+RQTWW/02pbNkCHeGXwxGimIlL1tMIagyuko0NX2vOz2B8jxJnPKlF09Wj18BcXBNUm3nDcSg==}
     peerDependencies:
       react: '>=17'
       react-dom: '>=17'
     dependencies:
-      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
       classcat: 5.0.4
       d3-drag: 3.0.0
       d3-selection: 3.0.0
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       zustand: 4.4.1(@types/react@18.2.31)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
       - immer
     dev: false
 
-  /@reactflow/node-toolbar@1.3.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0):
+  /@reactflow/node-toolbar@1.3.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-TfcmpXHRBb2mUfzKGjburiU6FWqRME9pPFs1OwIC1z5e9BjupQhNDEKEk8XHi7PKL/mAiDfwuGXaM1BVVFuPqw==}
     peerDependencies:
       react: '>=17'
       react-dom: '>=17'
     dependencies:
-      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
       classcat: 5.0.4
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       zustand: 4.4.1(@types/react@18.2.31)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
@@ -1695,7 +1695,7 @@ packages:
       vitest: 0.34.6(jsdom@22.1.0)(lightningcss@1.22.0)
     dev: true
 
-  /@testing-library/react@14.0.0(react-dom@18.2.0)(react@18.2.0):
+  /@testing-library/react@14.0.0(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-S04gSNJbYE30TlIMLTzv6QCTzt9AqIF5y6s6SzVFILNcNvbV/jU96GeiTPillGQo+Ny64M/5PV7klNYYgv5Dfg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -1704,9 +1704,9 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.11
       '@testing-library/dom': 9.3.1
-      '@types/react-dom': 18.2.14
+      '@types/react-dom': 18.3.0
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
     dev: true
 
   /@tootallnate/once@2.0.0:
@@ -1992,8 +1992,8 @@ packages:
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  /@types/react-dom@18.2.14:
-    resolution: {integrity: sha512-V835xgdSVmyQmI1KLV2BEIUgqEuinxp9O4G6g3FqO/SqLac049E53aysv0oEFD2kHfejeKU+ZqL2bcFWj9gLAQ==}
+  /@types/react-dom@18.3.0:
+    resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
     dependencies:
       '@types/react': 18.2.31
     dev: true
@@ -5920,14 +5920,14 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
-  /react-dom@18.2.0(react@18.2.0):
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
+  /react-dom@18.3.1(react@18.2.0):
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.3.1
     dependencies:
       loose-envify: 1.4.0
       react: 18.2.0
-      scheduler: 0.23.0
+      scheduler: 0.23.2
 
   /react-dropzone@14.2.3(react@18.2.0):
     resolution: {integrity: sha512-O3om8I+PkFKbxCukfIR3QAGftYXDZfOE2N1mr/7qebQJHs7U+/RSL/9xomJNpRg9kM5h9soQSdf0Gc7OHF5Fug==}
@@ -5973,7 +5973,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-i18next@13.3.1(i18next@23.6.0)(react-dom@18.2.0)(react@18.2.0):
+  /react-i18next@13.3.1(i18next@23.6.0)(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-JAtYREK879JXaN9GdzfBI4yJeo/XyLeXWUsRABvYXiFUakhZJ40l+kaTo+i+A/3cKIED41kS/HAbZ5BzFtq/Og==}
     peerDependencies:
       i18next: '>= 23.2.3'
@@ -5990,7 +5990,7 @@ packages:
       html-parse-stringify: 3.0.1
       i18next: 23.6.0
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
     dev: false
 
   /react-is@16.13.1:
@@ -6017,7 +6017,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-router-dom@6.15.0(react-dom@18.2.0)(react@18.2.0):
+  /react-router-dom@6.15.0(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-aR42t0fs7brintwBGAv2+mGlCtgtFQeOzK0BM1/OiqEzRejOZtpMZepvgkscpMUnKb8YO84G7s3LsHnnDNonbQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -6026,7 +6026,7 @@ packages:
     dependencies:
       '@remix-run/router': 1.8.0
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       react-router: 6.15.0(react@18.2.0)
     dev: false
 
@@ -6046,20 +6046,20 @@ packages:
     dependencies:
       loose-envify: 1.4.0
 
-  /reactflow@11.9.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0):
+  /reactflow@11.9.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0):
     resolution: {integrity: sha512-IHAKBkJngNvU9y1vZ5Nw9rvA3Z+zc9geTgQQIi9qq9Y9knGLlDDr9KfsjbFMew9AycAAgVg8TvBEakF4IT5lqg==}
     peerDependencies:
       react: '>=17'
       react-dom: '>=17'
     dependencies:
-      '@reactflow/background': 11.3.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
-      '@reactflow/controls': 11.2.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
-      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
-      '@reactflow/minimap': 11.7.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
-      '@reactflow/node-resizer': 2.2.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
-      '@reactflow/node-toolbar': 1.3.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      '@reactflow/background': 11.3.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
+      '@reactflow/controls': 11.2.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
+      '@reactflow/core': 11.9.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
+      '@reactflow/minimap': 11.7.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
+      '@reactflow/node-resizer': 2.2.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
+      '@reactflow/node-toolbar': 1.3.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
       - immer
@@ -6298,8 +6298,8 @@ packages:
       xmlchars: 2.2.0
     dev: true
 
-  /scheduler@0.23.0:
-    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
+  /scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
     dependencies:
       loose-envify: 1.4.0
 
@@ -6944,7 +6944,7 @@ packages:
       react-router-dom: '>=6.0.0'
     dependencies:
       react: 18.2.0
-      react-router-dom: 6.15.0(react-dom@18.2.0)(react@18.2.0)
+      react-router-dom: 6.15.0(react-dom@18.3.1)(react@18.2.0)
     dev: false
 
   /use-sync-external-store@1.2.0(react@18.2.0):
@@ -7683,11 +7683,11 @@ packages:
     dependencies:
       '@keycloak/keycloak-admin-client': link:libs/keycloak-admin-client
       '@patternfly/patternfly': 4.224.2
-      '@patternfly/react-code-editor': 4.82.115(react-dom@18.2.0)(react-monaco-editor@0.51.0)(react@18.2.0)
-      '@patternfly/react-core': 4.276.8(react-dom@18.2.0)(react@18.2.0)
-      '@patternfly/react-icons': 4.93.6(react-dom@18.2.0)(react@18.2.0)
+      '@patternfly/react-code-editor': 4.82.115(react-dom@18.3.1)(react-monaco-editor@0.51.0)(react@18.2.0)
+      '@patternfly/react-core': 4.276.8(react-dom@18.3.1)(react@18.2.0)
+      '@patternfly/react-icons': 4.93.6(react-dom@18.3.1)(react@18.2.0)
       '@patternfly/react-styles': 4.92.6
-      '@patternfly/react-table': 4.113.0(react-dom@18.2.0)(react@18.2.0)
+      '@patternfly/react-table': 4.113.0(react-dom@18.3.1)(react@18.2.0)
       dagre: 0.8.5
       file-saver: 2.0.5
       file-selector: 0.6.0
@@ -7698,13 +7698,13 @@ packages:
       lodash-es: 4.17.21
       monaco-editor: 0.44.0
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.2.0)
       react-dropzone: 14.2.3(react@18.2.0)
       react-error-boundary: 3.1.4(react@18.2.0)
       react-hook-form: 7.47.0(react@18.2.0)
-      react-i18next: 13.3.1(i18next@23.6.0)(react-dom@18.2.0)(react@18.2.0)
-      react-router-dom: 6.15.0(react-dom@18.2.0)(react@18.2.0)
-      reactflow: 11.9.4(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      react-i18next: 13.3.1(i18next@23.6.0)(react-dom@18.3.1)(react@18.2.0)
+      react-router-dom: 6.15.0(react-dom@18.3.1)(react@18.2.0)
+      reactflow: 11.9.4(@types/react@18.2.31)(react-dom@18.3.1)(react@18.2.0)
       ui-shared: link:libs/ui-shared
       use-react-router-breadcrumbs: 4.0.1(react-router-dom@6.15.0)(react@18.2.0)
     transitivePeerDependencies:
