@@ -57,8 +57,8 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       tslib:
-        specifier: ^2.6.2
-        version: 2.6.2
+        specifier: ^2.6.3
+        version: 2.6.3
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -377,7 +377,7 @@ importers:
         version: 0.4.4(rollup@4.1.4)
       '@rollup/plugin-typescript':
         specifier: ^11.1.5
-        version: 11.1.5(rollup@4.1.4)(tslib@2.6.2)(typescript@5.2.2)
+        version: 11.1.5(rollup@4.1.4)(tslib@2.6.3)(typescript@5.2.2)
       es6-promise:
         specifier: ^4.2.8
         version: 4.2.8
@@ -1159,7 +1159,7 @@ packages:
       is-glob: 4.0.3
       open: 9.1.0
       picocolors: 1.0.0
-      tslib: 2.6.2
+      tslib: 2.6.3
     dev: true
 
   /@playwright/test@1.39.0:
@@ -1349,7 +1349,7 @@ packages:
       terser: 5.19.2
     dev: true
 
-  /@rollup/plugin-typescript@11.1.5(rollup@4.1.4)(tslib@2.6.2)(typescript@5.2.2):
+  /@rollup/plugin-typescript@11.1.5(rollup@4.1.4)(tslib@2.6.3)(typescript@5.2.2):
     resolution: {integrity: sha512-rnMHrGBB0IUEv69Q8/JGRD/n4/n6b3nfpufUu26axhUcboUzv/twfZU8fIBbTOphRAe0v8EyxzeDpKXqGHfyDA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -1365,7 +1365,7 @@ packages:
       '@rollup/pluginutils': 5.0.4(rollup@4.1.4)
       resolve: 1.22.4
       rollup: 4.1.4
-      tslib: 2.6.2
+      tslib: 2.6.3
       typescript: 5.2.2
     dev: true
 
@@ -6608,7 +6608,7 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@pkgr/utils': 2.4.2
-      tslib: 2.6.2
+      tslib: 2.6.3
     dev: true
 
   /tabbable@5.3.3:
@@ -6786,6 +6786,10 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+
+  /tslib@2.6.3:
+    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
+    dev: true
 
   /tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
